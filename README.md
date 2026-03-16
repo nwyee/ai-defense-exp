@@ -183,11 +183,6 @@ jupyter lab notebooks/plain_ai.ipynb
 - Baseline behavior ကို နားလည်ဖို့ defense layer မပါဘဲ test လုပ်ပါတယ်
 - Production မှာ အမြဲတမ်း proper defense mechanisms တွေ သုံးပါ
 
-## License
-
-Educational purposes only.
----
-
 ---
  
 ## 🛡️ Defense Layer (Part 2)
@@ -254,6 +249,12 @@ requests>=2.31.0
 groq>=0.4.0
 ```
 
+---
+
+
+## License
+
+Educational purposes only.
 ---
 
 ## 📚 References

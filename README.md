@@ -188,16 +188,56 @@ jupyter lab notebooks/plain_ai.ipynb
 Educational purposes only.
 ---
 
-## 🛡️ Coming Next — Part 2
-
-Defense layer 3 ထပ် တည်ဆောက်မယ် —
-
+---
+ 
+## 🛡️ Defense Layer (Part 2)
+ 
+Raw model ရဲ့ vulnerability တွေ မြင်ပြီးနောက် 3-layer defense system တည်ဆောက်တယ်။
+ 
+```mermaid
+flowchart TD
+    A([User prompt]) --> B
+ 
+    B["🔍 Layer 1: Rule-based
+Regex pattern matching
+Fast — known attack keywords"]
+    B -->|blocked| R1(["🚫 Blocked"])
+    B -->|pass| C
+ 
+    C["🧠 Layer 2: LLM Classifier
+Llama as security judge
+Novel & indirect attacks"]
+    C -->|blocked| R2(["🚫 Blocked"])
+    C -->|pass| D
+ 
+    D["🤖 Target AI
+Hardened system prompt
+Prompt-level defense"]
+    D --> E
+ 
+    E["🔎 Layer 3: Output Filter
+Response leak detection
+Sanitize before delivery"]
+    E -->|leak detected| R3(["🚫 Sanitized"])
+    E -->|clean| F(["✅ Safe response"])
+ 
+    style A fill:#7F77DD,color:#fff,stroke:#534AB7
+    style B fill:#E6F1FB,color:#0C447C,stroke:#185FA5
+    style C fill:#E6F1FB,color:#0C447C,stroke:#185FA5
+    style D fill:#EAF3DE,color:#27500A,stroke:#3B6D11
+    style E fill:#E6F1FB,color:#0C447C,stroke:#185FA5
+    style F fill:#EAF3DE,color:#27500A,stroke:#3B6D11
+    style R1 fill:#FCEBEB,color:#791F1F,stroke:#A32D2D
+    style R2 fill:#FCEBEB,color:#791F1F,stroke:#A32D2D
+    style R3 fill:#FAEEDA,color:#633806,stroke:#854F0B
 ```
-Layer 1 → Rule-based regex      — fast, exact patterns catch လုပ်တယ်
-Layer 2 → LLM classifier        — novel / indirect attacks catch လုပ်တယ်
-Layer 3 → Output filter         — response ထဲက leaks sanitize လုပ်တယ်
-```
 
+### Raw vs Defense Results
+ 
+| | Raw Model | Defense Layer |
+|--|-----------|---------------|
+| Normal baseline | ✅ Pass | ✅ Pass |
+| Attack 7 ခု | 3/7 resisted (43%) | 7/7 blocked (100%) |
 ---
 
 ## 📦 Requirements
